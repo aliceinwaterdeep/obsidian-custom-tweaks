@@ -1,11 +1,11 @@
 import { Plugin } from "obsidian";
 
 export default class CustomTweaksPlugin extends Plugin {
+	private observer: MutationObserver | null = null;
+	private debounceTimer: NodeJS.Timeout | null = null;
+
 	async onload() {
-		console.log("Loading Custom Tweaks plugin");
-
 		this.app.workspace.onLayoutReady(() => this.runTweaks());
-
 		this.registerEvent(
 			this.app.workspace.on("layout-change", () => this.runTweaks())
 		);
@@ -14,10 +14,36 @@ export default class CustomTweaksPlugin extends Plugin {
 				setTimeout(() => this.runTweaks(), 100);
 			})
 		);
+
+		this.setupMutationObserver();
 	}
 
 	onunload() {
 		console.log("Unloading Custom Tweaks plugin");
+		this.observer?.disconnect();
+		if (this.debounceTimer) clearTimeout(this.debounceTimer);
+	}
+
+	setupMutationObserver() {
+		this.observer = new MutationObserver(
+			this.debounce(() => {
+				if (document.querySelector(".bases-cards-property")) {
+					this.runTweaks();
+				}
+			}, 150)
+		);
+
+		this.observer.observe(document.body, {
+			childList: true,
+			subtree: true,
+		});
+	}
+
+	debounce(func: Function, wait: number) {
+		return (...args: any[]) => {
+			if (this.debounceTimer) clearTimeout(this.debounceTimer);
+			this.debounceTimer = setTimeout(() => func.apply(this, args), wait);
+		};
 	}
 
 	runTweaks() {
@@ -41,7 +67,7 @@ export default class CustomTweaksPlugin extends Plugin {
 				.closest(".bases-cards-property")
 				?.getAttribute("data-property");
 			if (parentProperty && parentProperty.toLowerCase().includes("color")) {
-				const color = span.textContent.trim().toLowerCase();
+				const color = span?.textContent?.trim().toLowerCase();
 				span.className = `value-list-element custom-pill custom-color-pill--${color}`;
 			}
 		});
