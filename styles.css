@@ -1,112 +1,145 @@
 :root {
+	/* Color variables */
 	--beige: #a68f73;
 	--beige-rgb: rgb(227, 222, 219);
-
 	--black: #000000;
 	--black-rgb: rgb(167, 167, 167);
-
 	--blue: #2555ce;
 	--blue-rgb: rgb(211, 222, 248);
-
 	--brown: #5d3410;
 	--brown-rgb: rgb(240, 217, 196);
-
 	--gray: #6f6f6f;
 	--gray-rgb: rgb(210, 207, 207);
-
 	--green: #36774e;
 	--green-rgb: rgb(208, 229, 216);
-
 	--multicolor: #d68c47;
 	--multicolor-rgb: rgb(212, 236, 244);
-
 	--orange: #c9640c;
 	--orange-rgb: rgb(239, 208, 180);
-
 	--pink: #b03092;
 	--pink-rgb: rgb(243, 209, 235);
-
 	--purple: #7a2cc7;
 	--purple-rgb: rgb(219, 192, 247);
-
 	--red: #a91212;
 	--red-rgb: rgb(243, 194, 194);
-
 	--white: #a8a8a8;
 	--white-rgb: rgb(235, 235, 235);
-
 	--yellow: #dda013;
 	--yellow-rgb: rgb(242, 233, 211);
+
+	/* Yarn weight variables */
+	--yarn-weight-0: #bd954e;
+	--yarn-weight-0-rgb: rgb(255, 246, 229);
+	--yarn-weight-1: #0d47a1;
+	--yarn-weight-1-rgb: rgb(227, 242, 253);
+	--yarn-weight-2: #3eb4a3;
+	--yarn-weight-2-rgb: rgb(229, 248, 241);
+	--yarn-weight-3: #ef6c00;
+	--yarn-weight-3-rgb: rgb(255, 243, 224);
+	--yarn-weight-4: #c2185b;
+	--yarn-weight-4-rgb: rgb(252, 228, 236);
+	--yarn-weight-5: #7b1fa2;
+	--yarn-weight-5-rgb: rgb(243, 229, 245);
+	--yarn-weight-6: #0277bd;
+	--yarn-weight-6-rgb: rgb(225, 245, 254);
+	--yarn-weight-7: #a61a18;
+	--yarn-weight-7-rgb: rgb(255, 235, 238);
 }
 
-/* Custom Color Pills */
-
-.custom-color-pill {
-	padding: 1px 5px;
-	border-radius: 4px;
+/* Base pill styling */
+.custom-pill {
+	background-color: var(--background-modifier-border);
+	color: var(--text-normal);
+	padding: 2px 8px;
+	border-radius: 12px;
+	display: inline-block;
+	font-weight: 500;
 }
 
+/* Color pills */
 .custom-color-pill--beige {
 	color: var(--beige);
 	background-color: var(--beige-rgb);
 }
-
 .custom-color-pill--black {
 	color: var(--black);
 	background-color: var(--black-rgb);
 }
-
 .custom-color-pill--blue {
 	color: var(--blue);
 	background-color: var(--blue-rgb);
 }
-
 .custom-color-pill--brown {
 	color: var(--brown);
 	background-color: var(--brown-rgb);
 }
-
 .custom-color-pill--gray {
 	color: var(--gray);
 	background-color: var(--gray-rgb);
 }
-
 .custom-color-pill--green {
 	color: var(--green);
 	background-color: var(--green-rgb);
 }
-
 .custom-color-pill--multicolor {
 	color: var(--multicolor);
 	background-color: var(--multicolor-rgb);
 }
-
 .custom-color-pill--orange {
 	color: var(--orange);
 	background-color: var(--orange-rgb);
 }
-
 .custom-color-pill--pink {
 	color: var(--pink);
 	background-color: var(--pink-rgb);
 }
-
 .custom-color-pill--purple {
 	color: var(--purple);
 	background-color: var(--purple-rgb);
 }
-
 .custom-color-pill--red {
 	color: var(--red);
 	background-color: var(--red-rgb);
 }
-
 .custom-color-pill--white {
 	color: var(--white);
 	background-color: var(--white-rgb);
 }
-
 .custom-color-pill--yellow {
 	color: var(--yellow);
 	background-color: var(--yellow-rgb);
+}
+
+/* Yarn weight pills */
+.custom-yarn-weight-pill-0 {
+	color: var(--yarn-weight-0);
+	background-color: var(--yarn-weight-0-rgb);
+}
+.custom-yarn-weight-pill-1 {
+	color: var(--yarn-weight-1);
+	background-color: var(--yarn-weight-1-rgb);
+}
+.custom-yarn-weight-pill-2 {
+	color: var(--yarn-weight-2);
+	background-color: var(--yarn-weight-2-rgb);
+}
+.custom-yarn-weight-pill-3 {
+	color: var(--yarn-weight-3);
+	background-color: var(--yarn-weight-3-rgb);
+}
+.custom-yarn-weight-pill-4 {
+	color: var(--yarn-weight-4);
+	background-color: var(--yarn-weight-4-rgb);
+}
+.custom-yarn-weight-pill-5 {
+	color: var(--yarn-weight-5);
+	background-color: var(--yarn-weight-5-rgb);
+}
+.custom-yarn-weight-pill-6 {
+	color: var(--yarn-weight-6);
+	background-color: var(--yarn-weight-6-rgb);
+}
+.custom-yarn-weight-pill-7 {
+	color: var(--yarn-weight-7);
+	background-color: var(--yarn-weight-7-rgb);
 }
