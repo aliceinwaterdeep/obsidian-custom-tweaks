@@ -1,12 +1,14 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-custom-tweaks",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "A plugin for running your own custom JavaScript tweaks in Obsidian",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
-		"version": "node version-bump.mjs && git add manifest.json versions.json"
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"test": "jest",
+		"test:watch": "jest --watch"
 	},
 	"keywords": [],
 	"author": "",
