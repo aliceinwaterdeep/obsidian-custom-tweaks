@@ -7,7 +7,7 @@ import * as path from "path";
 const copyCSS = () => {
 	fs.copyFileSync(
 		path.join("src", "ob-custom-tweaks.css"),
-		path.join("styles.css")
+		path.join("styles.css"),
 	);
 	console.log("Copied styles.css to plugin root");
 };
@@ -24,7 +24,7 @@ const context = await esbuild.context({
 	banner: {
 		js: banner,
 	},
-	entryPoints: ["main.ts"],
+	entryPoints: ["src/main.ts"],
 	bundle: true,
 	external: [
 		"obsidian",
